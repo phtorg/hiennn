@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Example Form</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+    <script src="/js/jquery-3.5.0.js"></script>
+</head>
+<body>
+    <form id="mainForm" action="/addForm" method="POST">
+        <table>
+            <tr>
+                <th>Tên: </th>
+                <th><input type="text" id="name" name="name" th:value="${form.name}"></th>
+            </tr>
+            <tr>
+                <th>Giới tính: </th>
+                <th>
+                    <select id="gender" th:field="${form.gender}">
+                        <option th:value="M">Nam</option>
+                        <option th:value="F">Nữ</option>
+                    </select>
+            </tr>
+            <tr>
+                <th>Email: </th>
+                <th><input type="text" id="email" name="email" th:value="${form.email}"></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><button type="submit">Thêm vào Form</button></th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
